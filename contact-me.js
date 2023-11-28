@@ -70,12 +70,17 @@ const validateTalkCodeFields = () => {
 
 const showError = (input, message) => {
     const errorElement = input.parentElement.querySelector('.error');
+    const label = input.parentElement.querySelector('label');
+    console.log('label', label)
+    label.classList.add('invalid-label');
     errorElement.innerText = message;
     errorElement.style.display = 'block';
 }
 
 const hideError = (input) => {
     const errorElement = input.parentElement.querySelector('.error');
+    const label = input.parentElement.querySelector('label');
+    label.classList.remove('invalid-label');
     errorElement.innerText = '';
     errorElement.style.display = 'none';
 }

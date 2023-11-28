@@ -1,20 +1,23 @@
 input:invalid {
-    border: 1px solid red;
+    border: 2px solid red; 
 }
 
 input:valid {
     border: 1px solid green;
 }
 
-.invalid {
-    border: 1px solid red;
+label[for]:invalid {
+    color: red;
+    font-weight: bold;
 }
 
-.hidden {
-    display: none;
+.error {
+    color: red;
+    font-weight: bold;
 }
 
 #job-opportunity-fields,
 #talk-code-fields {
     display: none;
 }
+

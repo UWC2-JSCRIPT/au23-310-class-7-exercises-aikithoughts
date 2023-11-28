@@ -10,6 +10,11 @@ input:valid {
     border: 1px solid red;
 }
 
+.error, .invalid-label {
+    color: red;
+    font-weight: bold;
+}
+
 .hidden {
     display: none;
 }
