@@ -6,8 +6,10 @@ const email = document.getElementById('email');
 const select = document.getElementById('contact-kind');
 const employment = document.getElementById('employment');
 const code = document.getElementById('code');
+const jobOpportunityFields = document.getElementById('job-opportunity-fields')
 const jobTitle = document.getElementById('job-title');
 const companyWebsite = document.getElementById('company-website');
+const talkCodeFields = document.getElementById('talk-code-fields');
 const codingLanguageSelect = document.getElementById('coding-language');
 const message = document.getElementById('message');
 
@@ -71,7 +73,6 @@ const validateTalkCodeFields = () => {
 const showError = (input, message) => {
     const errorElement = input.parentElement.querySelector('.error');
     const label = input.parentElement.querySelector('label');
-    console.log('label', label)
     label.classList.add('invalid-label');
     errorElement.innerText = message;
     errorElement.style.display = 'block';
@@ -86,11 +87,12 @@ const hideError = (input) => {
 }
 
 select.addEventListener('change', () => {
-    handleSelect();
     if (select.value === 'employment') {
-        validateJobOpportunityFields();
+        jobOpportunityFields.classList.remove('hidden');
+        talkCodeFields.classList.add('hidden');
     } else if (select.value === 'code') {
-        validateTalkCodeFields();
+       talkCodeFields.classList.remove('hidden');
+       jobOpportunityFields.classList.add('hidden');
     }
 });
 
